@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fiitsio - The Smart Gym Management Platform">
+  <meta property="og:title" content="Fiitsio - Smart Gym Platform">
+  <meta property="og:description" content="Automate your gym operations with Fiitsio">
+  <meta property="og:url" content="https://fiitsio.com">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://fiitsio.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Fiitsio - The Smart Gym Management Platform</title>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">fiitsio</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="login-link">Login</a>
+        <a href="#" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-social">
+      <a href="#" aria-label="Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+      </a>
+      <a href="#" aria-label="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="#" aria-label="Twitter">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+      </a>
+      <a href="#" aria-label="LinkedIn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+    </div>
+    <div class="container hero-content">
+      <h1 class="fade-in">The Smart Gym Platform</h1>
+      <p class="hero-subtitle fade-in">Automate your gym, delight your members. Bookings, payments, retention &mdash; all in one platform.</p>
+      <div class="phone-row fade-in">
+        <!-- Phone 1: Classes -->
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div class="phone-screen classes-screen">
+            <div class="screen-header">Classes</div>
+            <div class="class-item">
+              <div class="class-dot dot-purple"></div>
+              <div class="class-info">
+                <span class="class-name">Yoga</span>
+                <span class="class-time">9:00 AM</span>
+              </div>
+              <span class="class-badge">Book</span>
+            </div>
+            <div class="class-item">
+              <div class="class-dot dot-orange"></div>
+              <div class="class-info">
+                <span class="class-name">HIIT</span>
+                <span class="class-time">10:00 AM</span>
+              </div>
+              <span class="class-badge">Book</span>
+            </div>
+            <div class="class-item">
+              <div class="class-dot dot-green"></div>
+              <div class="class-info">
+                <span class="class-name">Pilates</span>
+                <span class="class-time">11:00 AM</span>
+              </div>
+              <span class="class-badge">Book</span>
+            </div>
+          </div>
+        </div>
+        <!-- Phone 2: Progress -->
+        <div class="phone-mockup phone-center">
+          <div class="phone-notch"></div>
+          <div class="phone-screen progress-screen">
+            <div class="screen-header">Progress</div>
+            <div class="progress-ring-container">
+              <svg class="progress-ring" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" stroke="#e2e8f0" stroke-width="8" fill="none"/>
+                <circle cx="50" cy="50" r="40" stroke="#2563eb" stroke-width="8" fill="none" stroke-dasharray="201" stroke-dashoffset="50" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+              </svg>
+              <div class="progress-text">75%</div>
+            </div>
+            <div class="streak-counter">
+              <span class="streak-flame">&#128293;</span>
+              <span class="streak-num">12 day streak</span>
+            </div>
+          </div>
+        </div>
+        <!-- Phone 3: Schedule -->
+        <div class="phone-mockup">
+          <div class="phone-notch"></div>
+          <div class="phone-screen schedule-screen">
+            <div class="screen-header">Schedule</div>
+            <div class="week-grid">
+              <span class="day-label">M</span>
+              <span class="day-label">T</span>
+              <span class="day-label">W</span>
+              <span class="day-label">T</span>
+              <span class="day-label">F</span>
+              <span class="day-label">S</span>
+              <span class="day-label">S</span>
+              <span class="day-slot booked">9a</span>
+              <span class="day-slot">-</span>
+              <span class="day-slot booked">10a</span>
+              <span class="day-slot">-</span>
+              <span class="day-slot booked">8a</span>
+              <span class="day-slot">-</span>
+              <span class="day-slot">-</span>
+            </div>
+            <div class="schedule-detail">
+              <div class="sched-item booked-item">Mon &middot; Yoga 9am</div>
+              <div class="sched-item booked-item">Wed &middot; HIIT 10am</div>
+              <div class="sched-item booked-item">Fri &middot; Spin 8am</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="store-buttons fade-in">
+        <a href="#" class="store-btn">
+          <svg width="20" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div class="store-text"><small>Download on the</small><strong>App Store</strong></div>
+        </a>
+        <a href="#" class="store-btn">
+          <svg width="20" height="22" viewBox="0 0 24 24" fill="white"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35m13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27m3.35-4.31c.34.27.56.69.56 1.19s-.22.92-.57 1.19l-2.13 1.24-2.5-2.5 2.5-2.5 2.14 1.38M6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+          <div class="store-text"><small>Get it on</small><strong>Google Play</strong></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container about-grid">
+      <div class="about-phone fade-in">
+        <div class="phone-mockup phone-large">
+          <div class="phone-notch"></div>
+          <div class="phone-screen dashboard-screen">
+            <div class="screen-header">Dashboard</div>
+            <div class="dash-stat">
+              <span class="dash-num">248</span>
+              <span class="dash-label">Active Members</span>
+            </div>
+            <div class="dash-stat">
+              <span class="dash-num">32</span>
+              <span class="dash-label">Classes Today</span>
+            </div>
+            <div class="dash-bar-group">
+              <div class="dash-bar" style="width:85%"></div>
+              <div class="dash-bar" style="width:65%"></div>
+              <div class="dash-bar" style="width:92%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content fade-in">
+        <h2>About Fiitsio</h2>
+        <p>Fiitsio is the all-in-one gym management platform that helps fitness businesses streamline operations, engage members, and grow revenue.</p>
+        <ul class="feature-list">
+          <li><span class="check">&#10003;</span> Class booking &amp; scheduling</li>
+          <li><span class="check">&#10003;</span> Member progress &amp; gamification</li>
+          <li><span class="check">&#10003;</span> Integrated payments &amp; billing</li>
+          <li><span class="check">&#10003;</span> WhatsApp &amp; push notifications</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Section -->
+  <section class="partners">
+    <div class="container">
+      <h2 class="section-title fade-in">Trusted by leading gyms and studios</h2>
+      <div class="partner-grid fade-in">
+        <div class="partner-logo">Life Fitness</div>
+        <div class="partner-logo">Technogym</div>
+        <div class="partner-logo">Precor</div>
+        <div class="partner-logo">Matrix</div>
+        <div class="partner-logo">Cybex</div>
+        <div class="partner-logo">Hammer Strength</div>
+        <div class="partner-logo">Rogue</div>
+        <div class="partner-logo">TRUE Fitness</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title fade-in">What our clients say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-header">
+            <div class="avatar" style="background:#2563eb">JR</div>
+            <div>
+              <div class="testimonial-name">James Robinson</div>
+              <div class="testimonial-role">Owner, Iron Athletics</div>
+            </div>
+          </div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&ldquo;Fiitsio transformed how we manage our gym. Member retention is up 40% since we started using the platform.&rdquo;</p>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-header">
+            <div class="avatar" style="background:#7c3aed">SP</div>
+            <div>
+              <div class="testimonial-name">Sarah Patel</div>
+              <div class="testimonial-role">Manager, FitZone Studio</div>
+            </div>
+          </div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&ldquo;The class booking system is seamless. Our members love the app and the progress tracking keeps them coming back.&rdquo;</p>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-header">
+            <div class="avatar" style="background:#059669">MK</div>
+            <div>
+              <div class="testimonial-name">Michael Kim</div>
+              <div class="testimonial-role">Director, Peak Performance</div>
+            </div>
+          </div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&ldquo;Payment processing and billing used to be a nightmare. Fiitsio made it completely effortless for our staff.&rdquo;</p>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-header">
+            <div class="avatar" style="background:#dc2626">AL</div>
+            <div>
+              <div class="testimonial-name">Amanda Lee</div>
+              <div class="testimonial-role">Founder, Flex & Flow</div>
+            </div>
+          </div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&ldquo;From a single studio to three locations, Fiitsio scaled with us every step of the way. Couldn&rsquo;t run without it.&rdquo;</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+      <div class="accordion fade-in">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>How does class booking work?</span>
+            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Members can browse and book classes directly through the Fiitsio app or web portal. Gym owners set up class schedules, capacity limits, and waitlists. Members receive confirmation and reminders via push notification or WhatsApp.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Can members track their progress?</span>
+            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Yes! Members get a personal dashboard with workout streaks, attendance history, body metrics, and achievement badges. Gamification features keep them engaged and motivated to reach their fitness goals.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>How are payments handled?</span>
+            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Fiitsio integrates with major payment gateways for seamless billing. Set up recurring memberships, one-time class fees, or custom packages. Automated invoicing and payment reminders reduce missed payments significantly.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Is there a free trial?</span>
+            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Absolutely. We offer a 14-day free trial with full access to all features. No credit card required. Our onboarding team will help you get set up and migrated from your current system.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>Can I integrate with existing equipment?</span>
+            <svg class="accordion-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="accordion-body">
+            <p>Fiitsio supports integrations with popular fitness equipment brands and wearables. Connect smart cardio machines, heart rate monitors, and more to automatically log workout data for your members.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download CTA Section -->
+  <section class="download-cta">
+    <div class="container download-grid">
+      <div class="download-content fade-in">
+        <h2>Download the Fiitsio App</h2>
+        <p>Take your gym management on the go. Available on iOS and Android.</p>
+        <div class="store-buttons">
+          <a href="#" class="store-btn">
+            <svg width="20" height="24" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            <div class="store-text"><small>Download on the</small><strong>App Store</strong></div>
+          </a>
+          <a href="#" class="store-btn">
+            <svg width="20" height="22" viewBox="0 0 24 24" fill="white"><path d="M3 20.5v-17c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.24-.84-.76-.84-1.35m13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27m3.35-4.31c.34.27.56.69.56 1.19s-.22.92-.57 1.19l-2.13 1.24-2.5-2.5 2.5-2.5 2.14 1.38M6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+            <div class="store-text"><small>Get it on</small><strong>Google Play</strong></div>
+          </a>
+        </div>
+      </div>
+      <div class="download-phone fade-in">
+        <div class="phone-mockup phone-large">
+          <div class="phone-notch"></div>
+          <div class="phone-screen cta-screen">
+            <div class="screen-header">Fiitsio</div>
+            <div class="cta-welcome">Welcome back!</div>
+            <div class="cta-stat-row">
+              <div class="cta-stat"><span class="cta-stat-num">5</span><span class="cta-stat-label">Classes</span></div>
+              <div class="cta-stat"><span class="cta-stat-num">12</span><span class="cta-stat-label">Streak</span></div>
+            </div>
+            <div class="cta-btn-mock">View Schedule</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">fiitsio</a>
+        <p>The smart gym management platform that helps fitness businesses grow.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Fiitsio. All rights reserved. &middot; fiitsio.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
