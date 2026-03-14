@@ -1,13 +1,14 @@
 // ============================================
-// Fiitsio Landing Page - JavaScript
+// Fiitsio Landing Page — JS
 // ============================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  // --- Sticky navbar scroll effect ---
+
+  // --- Sticky navbar ---
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 10);
-  });
+  }, { passive: true });
 
   // --- Hamburger menu ---
   const hamburger = document.getElementById('hamburger');
@@ -20,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navActions.classList.toggle('open');
   });
 
-  // Close mobile menu on link click
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
@@ -29,10 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Smooth scroll for anchor links ---
+  // --- Smooth scroll ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+    anchor.addEventListener('click', e => {
+      const id = anchor.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
       if (target) {
         e.preventDefault();
         const offset = navbar.offsetHeight;
@@ -49,13 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const body = item.querySelector('.accordion-body');
       const isActive = item.classList.contains('active');
 
-      // Close all
       document.querySelectorAll('.accordion-item').forEach(i => {
         i.classList.remove('active');
         i.querySelector('.accordion-body').style.maxHeight = null;
       });
 
-      // Open clicked if it wasn't active
       if (!isActive) {
         item.classList.add('active');
         body.style.maxHeight = body.scrollHeight + 'px';
@@ -63,25 +63,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- IntersectionObserver fade-in animations ---
-  const fadeElements = document.querySelectorAll('.fade-in');
+  // --- Fade-in on scroll ---
+  const fadeEls = document.querySelectorAll('.fade-in');
 
   if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    fadeElements.forEach(el => observer.observe(el));
+    fadeEls.forEach(el => observer.observe(el));
   } else {
-    // Fallback: show all
-    fadeElements.forEach(el => el.classList.add('visible'));
+    fadeEls.forEach(el => el.classList.add('visible'));
   }
+
+  // --- Stagger fade-in for grids ---
+  document.querySelectorAll('.features-grid .feature-card, .testimonial-grid .testimonial-card').forEach((card, i) => {
+    card.style.transitionDelay = (i * 0.08) + 's';
+    card.classList.add('fade-in');
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      obs.observe(card);
+    } else {
+      card.classList.add('visible');
+    }
+  });
+
 });
