@@ -14,42 +14,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger');
   const navMenu   = document.getElementById('navMenu');
 
-  function openMenu() {
-    hamburger.classList.add('active');
-    navMenu.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    hamburger.setAttribute('aria-expanded', 'true');
-  }
-
-  function closeMenu() {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('open');
-    document.body.style.overflow = '';
-    hamburger.setAttribute('aria-expanded', 'false');
-  }
-
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.contains('open') ? closeMenu() : openMenu();
-  });
-
-  // Close on any link/button inside the menu
-  navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // Close when clicking outside the menu
-  document.addEventListener('click', e => {
-    if (navMenu.classList.contains('open') &&
-        !navMenu.contains(e.target) &&
-        !hamburger.contains(e.target)) {
-      closeMenu();
+  if (hamburger && navMenu) {
+    function openMenu() {
+      hamburger.classList.add('active');
+      navMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      hamburger.setAttribute('aria-expanded', 'true');
     }
-  });
 
-  // Close menu on resize to desktop
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) closeMenu();
-  }, { passive: true });
+    function closeMenu() {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('open');
+      document.body.style.overflow = '';
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', e => {
+      if (navMenu.classList.contains('open') &&
+          !navMenu.contains(e.target) &&
+          !hamburger.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    }, { passive: true });
+  }
 
   // --- Smooth scroll ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
