@@ -830,10 +830,25 @@ img { max-width:100%; display:block; }
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .member-phones { order: -1; }
-  .member-phone-stack { width: 260px; height: 360px; }
-  .phone-tilt-left .phone-frame,
-  .phone-tilt-right .phone-frame { width: 140px; }
+  /* Member phones: collapse to a single centered phone on mobile.
+     The two-phone tilted stack looks great on desktop but breaks on
+     narrow viewports — rotated absolute-position children overflow badly. */
+  .member-phones { order: -1; margin-bottom: 4px; }
+  .member-phone-stack { width: 190px; height: auto; }
+
+  /* Hide the left (booking) phone; show only the right (progress) phone */
+  .phone-tilt-left { display: none; }
+
+  /* Reset position/rotation so it flows normally inside the stack */
+  .phone-tilt-right {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    z-index: 1;
+  }
+  .phone-tilt-right .phone-frame { width: 190px; }
+
   .member-content .section-sub { margin-bottom: 28px; }
   .store-buttons { gap: 10px; }
 
@@ -889,9 +904,8 @@ img { max-width:100%; display:block; }
 
   .store-buttons { flex-direction: column; }
 
-  .member-phone-stack { width: 240px; height: 330px; }
-  .phone-tilt-left .phone-frame,
-  .phone-tilt-right .phone-frame { width: 128px; }
+  .member-phone-stack { width: 170px; }
+  .phone-tilt-right .phone-frame { width: 170px; }
 
   .final-cta-actions { max-width: 100%; }
 
@@ -910,12 +924,12 @@ img { max-width:100%; display:block; }
   .btn-lg { padding: 12px 16px; font-size: 0.85rem; }
   .btn-sm { padding: 8px 14px; font-size: 0.8rem; }
 
-  /* Single center phone — adjust size for very small screens */
+  /* Hero center phone — adjust for very small screens */
   .phone-center .phone-frame { width: 190px; }
 
-  .member-phone-stack { width: 220px; height: 310px; }
-  .phone-tilt-left .phone-frame,
-  .phone-tilt-right .phone-frame { width: 116px; }
+  /* Member section single phone */
+  .member-phone-stack { width: 155px; }
+  .phone-tilt-right .phone-frame { width: 155px; }
 
   .footer-grid { grid-template-columns: 1fr; }
   .footer-brand {
