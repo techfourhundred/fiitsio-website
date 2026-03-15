@@ -221,7 +221,15 @@ img { max-width:100%; display:block; }
   bottom:40px; left:-60px;
 }
 
-.hero-content { position:relative; z-index:2; text-align:center; }
+.hero-content {
+  position:relative;
+  z-index:2;
+  text-align:center;
+  /* Flex item MUST have min-width:0 — otherwise browser enforces
+     min-content size (~632px from phone row) instead of container width */
+  min-width: 0;
+  width: 100%;
+}
 
 .hero-badge {
   display:inline-flex; align-items:center; gap:8px;
@@ -491,6 +499,9 @@ img { max-width:100%; display:block; }
 /* --- Member Experience --- */
 .member-experience { padding:120px 0; background:var(--bg); }
 .member-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+/* Grid items can also exceed column width via min-width:auto — prevent this */
+.member-content,
+.member-phones { min-width: 0; }
 .member-content .section-sub { margin-bottom:36px; }
 
 .member-features { display:flex; flex-direction:column; gap:24px; margin-bottom:40px; }
@@ -764,21 +775,23 @@ img { max-width:100%; display:block; }
   }
   .hero-ctas .btn { justify-content: center; width: 100%; }
 
-  /* Phone row: horizontal scroll strip */
+  /* Phone row: horizontal scroll — contained within hero-content */
   .phone-row {
-    gap: 12px;
+    display: flex;
     overflow-x: auto;
+    overflow-y: visible;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
-    scroll-padding-left: 16px;
-    padding: 0 16px 16px;
-    margin: 0 -16px 44px;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 44px;
     justify-content: flex-start;
     scrollbar-width: none;
+    width: 100%;
   }
   .phone-row::-webkit-scrollbar { display: none; }
-  .phone-row .phone-mockup { scroll-snap-align: start; flex-shrink: 0; }
+  .phone-row .phone-mockup { scroll-snap-align: center; flex-shrink: 0; }
   .phone-frame { width: 152px; }
   .phone-center .phone-frame { width: 168px; }
   .phone-center { transform: translateY(-8px); }
