@@ -41,7 +41,10 @@
 
 /* --- Reset --- */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* prevent horizontal scroll at root level (iOS Safari fix) */
+}
 body {
   font-family:'Inter', sans-serif;
   background:var(--bg);
@@ -53,7 +56,7 @@ body {
 a { text-decoration:none; color:inherit; }
 ul { list-style:none; }
 img { max-width:100%; display:block; }
-.container { max-width:1200px; margin:0 auto; padding:0 24px; }
+.container { max-width:1200px; margin:0 auto; padding:0 24px; width:100%; }
 
 /* --- Type helpers --- */
 .section-label {
@@ -734,7 +737,11 @@ img { max-width:100%; display:block; }
 
   /* ---- Hero ---- */
   .hero { padding: 108px 0 56px; min-height: auto; }
-  .hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .hero h1 {
+    font-size: clamp(1.75rem, 7.5vw, 2.6rem);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
   .hero-subtitle {
     font-size: 1rem;
     margin-bottom: 28px;
@@ -742,6 +749,9 @@ img { max-width:100%; display:block; }
   }
   .hero-subtitle br { display: none; }
   .hero-social { display: none; }
+
+  /* Allow button text to wrap on mobile — prevents long text pushing viewport wide */
+  .btn { white-space: normal; }
 
   .hero-ctas {
     flex-direction: column;
@@ -854,8 +864,8 @@ img { max-width:100%; display:block; }
 
 /* ---- Small Mobile: 480px ---- */
 @media (max-width: 480px) {
-  .hero h1 { font-size: 1.85rem; }
-  .section-heading { font-size: 1.6rem; }
+  .hero h1 { font-size: 1.7rem; }
+  .section-heading { font-size: 1.55rem; }
   .btn-lg { padding: 13px 20px; font-size: 0.9rem; }
 
   .hero-ctas { max-width: 100%; }
@@ -880,7 +890,7 @@ img { max-width:100%; display:block; }
 /* ---- Extra Small: 360px ---- */
 @media (max-width: 360px) {
   .container { padding: 0 12px; }
-  .hero h1 { font-size: 1.6rem; }
+  .hero h1 { font-size: 1.5rem; }
   .hero-badge { font-size: 0.68rem; padding: 5px 12px; }
   .hero-subtitle { font-size: 0.9rem; }
   .section-heading { font-size: 1.4rem; }
