@@ -1,6 +1,6 @@
 /* ============================================
    Fiitsio — Design System
-   Background #202020 · Gradient #A8C7FA→#FFE883
+   Background #202020 · Highlight #A8C7FA
    Accents #6ED58D #D9BAFE #FFAFE4 #FFB683 #FFE883
    ============================================ */
 
@@ -12,16 +12,8 @@
   --border:   rgba(255,255,255,0.08);
   --border-2: rgba(255,255,255,0.13);
 
-  /* Main gradient (left → right, matching Figma stops) */
-  --gradient: linear-gradient(90deg,
-    #A8C7FA 12%,
-    #ADC5F2 19%,
-    #BBC3DF 30%,
-    #D3BEBE 44%,
-    #F4B891 59%,
-    #FFB683 63%,
-    #FFE883 84%
-  );
+  /* Main highlight color */
+  --gradient: #A8C7FA;
 
   /* Solid palette */
   --blue:     #A8C7FA;
@@ -452,11 +444,11 @@ img { max-width:100%; display:block; }
   content:''; position:absolute; top:0; left:0; right:0; height:2px;
   opacity:0; transition:opacity var(--t);
 }
-/* Each card gets a slice of the gradient as its top accent */
-.feature-card:nth-child(1)::after { background:linear-gradient(90deg, #A8C7FA, #BBC3DF); }
-.feature-card:nth-child(2)::after { background:linear-gradient(90deg, #BBC3DF, #F4B891); }
-.feature-card:nth-child(3)::after { background:linear-gradient(90deg, #F4B891, #FFB683); }
-.feature-card:nth-child(4)::after { background:linear-gradient(90deg, #FFB683, #FFE883); }
+/* Each card gets the highlight color as its top accent */
+.feature-card:nth-child(1)::after,
+.feature-card:nth-child(2)::after,
+.feature-card:nth-child(3)::after,
+.feature-card:nth-child(4)::after { background: #A8C7FA; }
 
 .feature-card:hover { border-color:var(--border-2); transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,0.25); }
 .feature-card:hover::after { opacity:1; }
